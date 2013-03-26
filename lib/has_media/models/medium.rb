@@ -1,7 +1,7 @@
 class Medium < ActiveRecord::Base
   require 'digest/sha1'
 
-  set_table_name 'media'
+  self.table_name = 'media'
   self.inheritance_column = :media_type
 
   has_many   :media_links, :foreign_key => :medium_id, :dependent => :destroy
